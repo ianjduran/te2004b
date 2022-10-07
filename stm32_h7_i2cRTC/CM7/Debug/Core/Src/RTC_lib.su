@@ -1,0 +1,5 @@
+../Core/Src/RTC_lib.c:17:9:decToBcd	16	static
+../Core/Src/RTC_lib.c:26:5:bcdToDec	16	static
+../Core/Src/RTC_lib.c:41:6:SetTime	48	static
+../Core/Src/RTC_lib.c:57:6:getCurrentTime	32	static
+../Core/Src/RTC_lib.c:67:6:printCurrentTime	56	static
