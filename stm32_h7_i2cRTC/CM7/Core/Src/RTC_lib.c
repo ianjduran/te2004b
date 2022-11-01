@@ -73,7 +73,6 @@ void printCurrentTime(uint8_t buff[], uint16_t Size){
 	int month = bcdToDec(buff[5]);
 	int year = 2000+bcdToDec(buff[6]);
 	printf("Elapsed time: %02d-%02d-%02d %02d:%02d:%02d \n\r", month, day, year, hour, min, sec);
-
 }
 
 

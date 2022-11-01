@@ -135,15 +135,18 @@ int main(void) {
 	uint16_t RTC_ADDR = 0b1101000;
 	uint8_t curr_time[7];
 
-	SetTime(RTC_ADDR, 30, 5, 12, 7, 10, 22);
+	SetTime(RTC_ADDR, 0, 28, 18, 7, 10, 22);
 	printf("TIME SET\n\r");
 	while (1) {
 
+//
 		HAL_I2C_Mem_Read(&hi2c4, RTC_ADDR << 1, 0x00, I2C_MEMADD_SIZE_8BIT,
 				&curr_time, sizeof(curr_time), HAL_MAX_DELAY);
 
 		printCurrentTime(curr_time, sizeof(curr_time));
-
+//		uint8_t data = 0x03;
+//		HAL_I2C_Mem_Write(&hi2c4, RTC_ADDR << 1, 0x01, I2C_MEMADD_SIZE_8BIT, &data,
+//					1, HAL_MAX_DELAY);
 		HAL_GPIO_TogglePin(LD1_GPIO_Port, LD1_Pin);
 		HAL_Delay(100);
 		/* USER CODE END WHILE */
